@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dyedat6vl8vb"]
+
+[ext_resource type="PackedScene" uid="uid://hccn2mo0thpp" path="res://p_test.tscn" id="1_0dwx2"]
+
+[sub_resource type="Environment" id="Environment_hphkb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hphkb"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u6tdb"]
+distance = -422.0
+
+[node name="Environment" type="Node" unique_id=1938372479]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=277821421]
+environment = SubResource("Environment_hphkb")
+
+[node name="CharacterBody2D" parent="." unique_id=210105037 instance=ExtResource("1_0dwx2")]
+position = Vector2(290, -101)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1789404082]
+position = Vector2(470, -2)
+physics_material_override = SubResource("PhysicsMaterial_hphkb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1856102818]
+shape = SubResource("WorldBoundaryShape2D_u6tdb")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1237251165]
+color = Color(0.47119492, 0.7256874, 1.540184e-06, 1)
+polygon = PackedVector2Array(466, 418, 1237, 418, 1243, 701, -76, 696, -69, 417)
